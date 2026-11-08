@@ -16,7 +16,7 @@ Copy the contents of `sd-card-root/` from the extracted ZIP to your SD card root
 
 *You can drag and drop your Atmosphère `contents` folder into `SD:/ns2jb-modloader/` (as long as your mods are compatible).*
 
-To add a mod manually, put its `romfs/` and `exefs/` folders under **`SD:/ns2jb-modloader/contents/<TITLE_ID>/`**, using the game's 16-digit Title ID. If included, copy `exefs_patches/` beside `contents/`. You can have mods for several games together:
+Extract the mod's `romfs/` and `exefs/` folders into `SD:/ns2jb-modloader/contents/<TITLE_ID>/`, using the game's 16-digit Title ID. **IPS patches work in both `exefs/` and `exefs_patches/`; there's no need to move or duplicate them.** Your folders might look like this:
 
 ```text
 ns2jb-modloader/                     # On the SD card root
@@ -31,16 +31,17 @@ ns2jb-modloader/                     # On the SD card root
 │   └── ...other game's Title ID.../
 │       ├── romfs/
 │       └── exefs/
-└── exefs_patches/                    # If included with the mod
+│           └── <BUILD_ID>.ips       # IPS patches can go here OR in exefs_patches/
+└── exefs_patches/
     └── ...patch name.../
-        └── <BUILD_ID>.ips
+        └── <BUILD_ID>.ips           # IPS patches can go here OR in the game's exefs/
 ```
 
 Combine each game's mods in the same `romfs/` or `exefs/` folder. One installation handles all included games. The loader reads mod files in place; it does not duplicate your modpack or write patched executables to the SD.
 
 For example, if you want to install the 200cc mod for Mario Kart World and the download contains `200cc/romfs/System/GymlArchive/`, copy its `romfs/` folder into `SD:/ns2jb-modloader/contents/0400c3f00006e000/`. Keep the paths inside `romfs/` unchanged.
 
-`exefs/` contains complete files such as `main` or `subsdk0`. IPS/IPS32 patches go in `exefs_patches/<PATCH_NAME>/<BUILD_ID>.ips`; keep their filenames unchanged.
+`exefs/` accepts complete files such as `main` or `subsdk0`, as well as IPS/IPS32 and IPSwitch `.pchtxt` patches. Patches work in either `exefs_patches/` or `contents/<TITLE_ID>/exefs/`.
 
 ## 2. Load your mods
 
