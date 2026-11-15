@@ -8,7 +8,7 @@ Requires a microSD or microSD Express card and an existing **RPC session with th
 
 **Mod compatibility:** Some older Switch 1 ExeFS mods need updates for games that changed from 32-bit to 64-bit, such as Mario Kart 8 Deluxe. Most Switch 1 games were already 64-bit. RomFS mods may still work if the game's file formats and paths are unchanged. Plugins, cheats and overlays do not work yet.
 
-**PC:** Linux/WSL and Node.js 22+ (the runtime used for ns2jb).
+**PC:** Node.js 22+ on Linux, macOS or Windows/WSL, with a compatible RPC host. See [macOS](MACOS.md) or [Windows/WSL](WINDOWS.md) for host setup notes.
 
 ## 1. Add your mods
 
